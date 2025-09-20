@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amigo Secreto - Pruebas de Supervivencia</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style3.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <section id="intro" class="intro-section">
+        <h1 class="intro-title">PRUEBAS DE SUPERVIVENCIA</h1>
+        <div class="intro-text">
+          Tienes exactamente <strong>60 segundos</strong> para cada prueba.<br />
+          Si fallas en cualquier momento, volverás al inicio.<br />
+          Cada prueba superada liberará una letra del nombre de tu amig@ secret@:<br /><br />
+          <em>Que empiece el juego!</em>
+        </div>
+        <button id="startGame" class="start-button">Empezar</button>
+      </section>
+
+      <section id="progress" class="progress-section" style="display: none">
+        <h2 class="progress-title">PROGRESO DE SUPERVIVENCIA</h2>
+        <div class="letras-display" id="letrasObtenidas">LETRAS OBTENIDAS:</div>
+        <div class="game-info">PRUEBA <span id="juegoActual">1</span> DE 3</div>
+        <div
+          class="game-info"
+          style="color: var(--color-2); font-size: 1rem; margin-top: 15px"
+        >
+          Fallar significa empezar de nuevo...
+        </div>
+      </section>
+
+      <section id="final" class="final-section" style="display: none">
+        <h2 class="final-title">AÚN NO TERMINAMOS</h2>
+        <p class="intro-text">Has superado todas las pruebas y obtenido:</p>
+        <div class="final-letters" id="letrasFinales">S - R - A</div>
+        <p class="intro-text">
+          Ahora conoces 3 letras de su nombre.
+        </p>
+        <button class="continue-button" onclick="window.location.href='pagina4.html'">
+          CONTINUAR
+        </button>
+      </section>
+    </main>
+    <audio
+      id="saw-theme"
+      src="Audio/Saw Ultimate Theme Song [9fwWS6Xo1go].mp3"
+      preload="auto"
+    ></audio>
+    <script src="script3-audio.js"></script>
+    <script src="minijuegos.js"></script>
+  </body>
+</html>

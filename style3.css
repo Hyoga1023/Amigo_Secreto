@@ -1,0 +1,421 @@
+:root {
+    --color-1: #7d0a0a;
+    --color-2: #bf3131;
+    --color-3: #ead196;
+    --color-4: #eeeeee;
+    --color-5: #000000;
+}
+
+.syne-mono-regular {
+    font-family: "Syne Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.syne-mono-bold {
+    font-family: "Syne Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("img/Fondo_corazones_grises.png");
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-5);
+    font-family: "Syne Mono", monospace;
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 0 20px;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    position: relative;
+}
+
+.intro-section {
+    max-width: 800px;
+    padding: 40px;
+    background: linear-gradient(
+        145deg,
+        rgba(125, 10, 10, 0.3),
+        rgba(191, 49, 49, 0.2)
+    );
+    border: 2px solid var(--color-2);
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(125, 10, 10, 0.5);
+}
+
+.intro-title {
+    font-family: "Syne Mono", monospace;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--color-4);
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: 2px;
+}
+
+.intro-text {
+    font-family: "Syne Mono", monospace;
+    font-size: 1.2rem;
+    color: var(--color-3);
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.start-button {
+    font-family: "Syne Mono", monospace;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 15px 40px;
+    background-color: var(--color-2);
+    color: var(--color-4);
+    border: 2px solid var(--color-1);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(125, 10, 10, 0.4);
+}
+
+.start-button:hover {
+    background-color: var(--color-1);
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(125, 10, 10, 0.7);
+}
+
+.progress-section {
+    max-width: 600px;
+    padding: 30px;
+    background: linear-gradient(
+        145deg,
+        rgba(125, 10, 10, 0.2),
+        rgba(0, 0, 0, 0.8)
+    );
+    border: 2px solid var(--color-2);
+    border-radius: 10px;
+}
+
+.progress-title {
+    font-family: "Syne Mono", monospace;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--color-4);
+    margin-bottom: 20px;
+}
+
+.letras-display {
+    font-family: "Syne Mono", monospace;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--color-3);
+    margin: 20px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.game-info {
+    font-family: "Syne Mono", monospace;
+    font-size: 1.2rem;
+    color: var(--color-4);
+    margin: 10px 0;
+}
+
+.final-section {
+    max-width: 700px;
+    padding: 40px;
+    background: linear-gradient(
+        145deg,
+        rgba(125, 10, 10, 0.4),
+        rgba(191, 49, 49, 0.3)
+    );
+    border: 3px solid var(--color-2);
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(125, 10, 10, 0.8);
+}
+
+.final-title {
+    font-family: "Syne Mono", monospace;
+    font-weight: 700;
+    font-size: 2.8rem;
+    color: var(--color-4);
+    margin-bottom: 20px;
+}
+
+.final-letters {
+    font-family: "Syne Mono", monospace;
+    font-weight: 700;
+    font-size: 3rem;
+    color: var(--color-3);
+    margin: 30px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: 8px;
+}
+
+.timer-display {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: linear-gradient(145deg, var(--color-1), var(--color-2));
+    color: var(--color-4);
+    padding: 15px 25px;
+    border: 2px solid var(--color-2);
+    border-radius: 8px;
+    font-family: "Syne Mono", monospace;
+    font-weight: 700;
+    font-size: 1.3rem;
+    z-index: 9999;
+    box-shadow: 0 4px 15px rgba(125, 10, 10, 0.6);
+    letter-spacing: 1px;
+}
+
+.timer-warning {
+    background: linear-gradient(145deg, #8b0000, #ff0000) !important;
+    animation: pulse-warning 1s infinite;
+}
+
+@keyframes pulse-warning {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+.timer-display {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  font-family: 'Syne Mono', monospace;
+  color: #EAD196;
+  background: rgba(0,0,0,0.6);
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.timer-warning {
+  color: #ff4d4d;
+  animation: parpadeo 0.8s infinite;
+}
+
+@keyframes parpadeo {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.click-target {
+    position: fixed;
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(circle, var(--color-2), var(--color-1));
+    border: 3px solid var(--color-4);
+    border-radius: 50%;
+    cursor: crosshair;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-4);
+    font-family: "Syne Mono", monospace;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: 0 0 20px rgba(125, 10, 10, 0.8);
+    z-index: 1000;
+}
+
+.click-target:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(191, 49, 49, 1);
+}
+
+.sequence-display {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.color-box {
+    width: 80px;
+    height: 80px;
+    border: 3px solid var(--color-4);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-4);
+    font-family: "Syne Mono", monospace;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rojo {
+    background: linear-gradient(135deg, var(--color-1), var(--color-2));
+}
+.gris {
+    background: linear-gradient(135deg, #333, #666);
+}
+.blanco {
+    background: linear-gradient(135deg, #ddd, var(--color-4));
+    color: var(--color-5);
+}
+.negro {
+    background: linear-gradient(135deg, var(--color-5), #333);
+}
+
+/* Estilos para SweetAlert2 personalizados */
+.swal2-popup {
+    background: linear-gradient(
+        145deg,
+        rgba(125, 10, 10, 0.95),
+        rgba(0, 0, 0, 0.95)
+    ) !important;
+    border: 2px solid var(--color-2) !important;
+    color: var(--color-4) !important;
+    font-family: "Syne Mono", monospace !important;
+}
+
+.swal2-title {
+    color: var(--color-4) !important;
+    font-family: "Syne Mono", monospace !important;
+    font-weight: 700 !important;
+}
+
+.swal2-content {
+    color: var(--color-3) !important;
+    font-family: "Syne Mono", monospace !important;
+}
+
+.swal2-confirm {
+    background-color: var(--color-2) !important;
+    border: 2px solid var(--color-1) !important;
+    font-family: "Syne Mono", monospace !important;
+    font-weight: 700 !important;
+}
+
+.swal2-confirm:hover {
+    background-color: var(--color-1) !important;
+}
+
+.swal2-input {
+    background: rgba(0, 0, 0, 0.7) !important;
+    border: 2px solid var(--color-2) !important;
+    color: var(--color-4) !important;
+    font-family: "Syne Mono", monospace !important;
+}
+
+.swal2-input:focus {
+    border-color: var(--color-3) !important;
+    box-shadow: 0 0 10px rgba(234, 209, 150, 0.3) !important;
+}
+
+.restart-button {
+    font-family: "Syne Mono", monospace;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    background-color: var(--color-2);
+    color: var(--color-4);
+    border: 2px solid var(--color-1);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.restart-button:hover {
+    background-color: var(--color-1);
+    transform: scale(1.05);
+}
+
+.continue-button {
+    font-family: "Syne Mono", monospace;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    background-color: var(--color-2);
+    color: var(--color-4);
+    border: 2px solid var(--color-1);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.continue-button:hover {
+    background-color: var(--color-1);
+    transform: scale(1.05);
+}
+
+.failure-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(125, 10, 10, 0.9);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.glitch-text {
+    animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}

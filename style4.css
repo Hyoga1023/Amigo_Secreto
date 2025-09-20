@@ -1,0 +1,96 @@
+:root {
+  --color-1: #7d0a0a;
+  --color-2: #bf3131;
+  --color-3: #ead196;
+  --color-4: #eeeeee;
+  --color-5: #000000;
+}
+.syne-mono-regular {
+  font-family: "Syne Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Syne Mono', monospace;
+  font-size: 2rem;
+    color: var(--color-4);
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-3);
+  background-size: cover;
+  background-position: center;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 0 20px;
+}
+.texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Syne Mono', monospace;
+    font-size: 2rem;
+    color: var(--color-1);
+    margin-bottom: 20px;
+}
+.contenedor {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor img {
+  width: 400px;
+  height: 400px;
+}
+.corazon {
+  position: fixed;
+  bottom: -20px;
+  color: red;
+  animation: subir 4s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes subir {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.5);
+    opacity: 0;
+  }
+}
+#startButton {
+    font-family: 'Syne Mono', monospace;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    background-color: var(--color-2);
+    color: var(--color-4);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+#startButton:hover {
+    background-color: var(--color-1);
+    transform: scale(1.1);
+}

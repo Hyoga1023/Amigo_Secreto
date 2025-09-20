@@ -1,0 +1,58 @@
+:root {
+    --color-1: #7d0a0a;
+    --color-2: #bf3131;
+    --color-3: #ead196;
+    --color-4: #eeeeee;
+    --color-5: #000000;
+}
+
+.syne-mono-regular {
+    font-family: "Syne Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.syne-mono-bold {
+    font-family: "Syne Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("img/Fondo_corazones_grises.png");
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-5);
+    font-family: "Syne Mono", monospace;
+    font-size: 1.5rem;
+    color: var(--color-4);
+    overflow-x: hidden;
+}
+input {
+    font-family: 'Syne Mono', monospace;
+    font-size: 1.5rem;
+    padding: 10px;
+    border: 2px solid var(--color-3);
+    border-radius: 5px;
+    background-color: var(--color-1);
+    color: var(--color-5);
+    margin-top: 20px;
+    text-align: center;
+}
+.mensaje_final{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
