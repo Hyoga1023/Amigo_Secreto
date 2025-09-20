@@ -1,6 +1,6 @@
 // musica.js
 window.addEventListener("DOMContentLoaded", () => {
-  const AUDIO_PATH = "Audio/musica_instrumental_para_ninos_felices.mp3";
+  const AUDIO_PATH = "audios/musica_instrumental_para_ninos_felices.mp3";
   let audioEl = document.getElementById("musica");
 
   // Si no existe en el HTML, lo creamos (por si quieres mantener todo en JS)
