@@ -1,30 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
-        const audio = document.getElementById("jigsaw-audio");
-        const btn = document.getElementById("btn-empezar");
+    const audio = document.getElementById("jigsaw-audio");
+    const btn = document.getElementById("btn-empezar");
 
-        // Solo reproducir si venimos del index con bandera
-        const activar = sessionStorage.getItem("activarAudio");
-        if (activar) {
-          setTimeout(() => {
+    // Verificar si el archivo existe antes de intentar reproducirlo
+    audio.addEventListener('loadeddata', () => {
+        console.log('Audio cargado correctamente');
+    });
+    
+    audio.addEventListener('error', (e) => {
+        console.error('Error cargando audio:', e);
+        // Habilitar el botón aunque el audio falle
+        btn.disabled = false;
+        btn.classList.add("btn-activo");
+    });
+
+    const activar = sessionStorage.getItem("activarAudio");
+    if (activar) {
+        setTimeout(() => {
             audio.volume = 1;
-            audio.play()
-              .then(() => {
-                // Desbloquear botón cuando el audio termine
-                audio.addEventListener("ended", () => {
-                  btn.disabled = false;
-                  btn.classList.add("btn-activo"); // opcional, para estilo
-                });
-              })
-              .catch(err => {
-                console.warn("Autoplay bloqueado:", err);
-                // Si falla autoplay, habilitamos el botón manualmente
-                btn.disabled = false;
-              });
-          }, 1000); // ← delay de 1 segundo
+            
+            // Verificar si el audio se puede reproducir
+            const playPromise = audio.play();
+            
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => {
+                        audio.addEventListener("ended", () => {
+                            btn.disabled = false;
+                            btn.classList.add("btn-activo");
+                        });
+                    })
+                    .catch(err => {
+                        console.warn("El navegador bloqueó el autoplay:", err);
+                        btn.disabled = false;
+                        btn.classList.add("btn-activo");
+                    });
+            }
+        }, 1000);
 
-          sessionStorage.removeItem("activarAudio");
-        } else {
-          // Si entran directo sin bandera, habilitamos el botón al tiro
-          btn.disabled = false;
-        }
-      });
+        sessionStorage.removeItem("activarAudio");
+    } else {
+        btn.disabled = false;
+    }
+});
