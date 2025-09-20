@@ -115,7 +115,7 @@ class JuegoPruebas {
 
         const preguntar = () => {
             Swal.fire({
-                title: `DESCIFRAR CÓDIGO (${intentos + 1}/${maxIntentos})`,
+                title: `DESCIFRAR CÓDIGO Oportunidades (${intentos + 1}/${maxIntentos})`,
                 text: 'Adivina el número entre 1 y 20',
                 input: 'number',
                 inputAttributes: { min: 1, max: 20 },
