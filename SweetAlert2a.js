@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       color: '#fff',
       confirmButtonColor: '#c2185b'
     }).then(result => {
-      if (result.isConfirmed && result.value === '9191') {
+      if (result.isConfirmed && result.value === '9158') {
         Swal.fire({
           title: '¡Bienvenida Monica!',
           text: 'Acceso concedido. Recuerda subir el volumen',

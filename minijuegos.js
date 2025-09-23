@@ -175,9 +175,9 @@ class JuegoPruebas {
                 confirmButtonText: 'VERIFICAR',
                 allowOutsideClick: false,
                 inputValidator: value => {
-                    if (!value) return 'Debes escribir la secuencia';
+                    if (!value) return 'Debes escribir la secuencia separados por comas';
                     const r = value.toLowerCase().split(',').map(s => s.trim());
-                    if (r.length !== 5) return 'Deben ser exactamente 5 colores';
+                    if (r.length !== 5) return 'Deben ser exactamente 5 colores y separarlos con comas';
                     const ok = r.every((c, i) => c === secuencia[i]);
                     if (ok) {
                         limpiarTimer();
@@ -243,7 +243,7 @@ class JuegoPruebas {
             icon: 'success',
             title: 'PRUEBA SUPERADA',
             text: `${msg}. Letra liberada: ${this.letras[this.juegoActual]}`,
-            confirmButtonText: 'SIGUIENTE PRUEBA',
+            confirmButtonText: 'SIGUIENTE',
             background: 'linear-gradient(145deg, rgba(0,100,0,0.8), rgba(0,0,0,0.95))',
             color: '#EEEEEE'
         }).then(() => {

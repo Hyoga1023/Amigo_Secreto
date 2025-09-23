@@ -1,44 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amigo Secreto - Pruebas de Supervivencia</title>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="icon" type="image/png" href="img/Corazón_icon.png" />
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style_final.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style3.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Syne+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
-  </head>
-  <body>
-    <main>
-      <div class="mensaje_final">
-        <p>Has reunido las tres letras del nombre de tu amig@ secret@.</p>
-        <p>
-          ¿Serás capaz de adivinar el nombre completo y liberar
-        </p>
-        <p>
-          el código oculto que te lleva a la recompensa?
-        </p>
-        <input
-          type="text"
-          id="nombreInput"
-          placeholder="Escribe el nombre aquí"
-        />
-      </div>
-    </main>
-    <audio
+  <title>Juego del Amigo Secreto</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Adivina el Amigo Secreto</h1><br>
+    <p>Ingresa el primer nombre</p>
+    <p>de tu amigo secreto para recibir tu premio.</p><br>
+    
+    <input type="text" id="nombreInput" placeholder="Escribe el nombre aquí">
+    
+    <button id="validarNombre">Validar</button>
+    
+    <p id="feedbackMessage"></p>
+  </div>
+  <audio
       id="saw-theme"
       src="audios/Saw Ultimate Theme Song [9fwWS6Xo1go].mp3"
       preload="auto"
     ></audio>
-    <script src="script4.js"></script>
     <script src="script3-audio.js"></script>
-    <script src="minijuegos.js"></script>
-  </body>
+  <script src="script4.js"></script>
+</body>
 </html>
