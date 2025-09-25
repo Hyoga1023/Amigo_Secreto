@@ -18,7 +18,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   audioEl.loop = true;
-  audioEl.volume = 0.5; // ajusta entre 0.0 y 1.0
+  audioEl.volume = 0.3; // ajusta entre 0.0 y 1.0
 
   // Intento de autoplay. Si falla, se configura el listener de interacción.
   const intentarReproducir = () => {
