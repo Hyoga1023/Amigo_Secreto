@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const validarCodigo = () => {
     Swal.fire({
       title: '🔒 Acceso restringido',
-      text: 'Solo si tienes el código correcto podrás continuar',
+      text: 'Solo si tienes el código secreto podrás continuar',
       input: 'password',
       inputPlaceholder: 'Escribe tu código aquí',
       confirmButtonText: 'Entrar',
