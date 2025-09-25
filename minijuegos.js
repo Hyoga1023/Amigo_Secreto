@@ -3,7 +3,7 @@ class JuegoPruebas {
         this.letras = ["S", "R", "A"];
         this.letrasObtenidas = [];
         this.juegoActual = 0;
-        this.tiempoLimite = 60000; // 60s
+        this.tiempoLimite = 40000; // 40seg
         this.init();
     }
 
@@ -74,7 +74,7 @@ class JuegoPruebas {
             tiempoRestante -= 10;
             updateTimer();
 
-            if (tiempoRestante <= 10000) {
+            if (tiempoRestante <= 15000) {
                 timerDiv.classList.add('timer-warning');
             }
 
